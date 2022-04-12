@@ -7,11 +7,9 @@ import java.util.List;
 
 public interface IShopManager {
 
-    List<Fish> findByCategory(FishCategory category);
+    List<Fish> fishInPriceRange(float minPrice, float maxPrice, FishCategory category);
 
-    List<Fish> findByPrice(float price);
-
-    void addFish(List<Fish> fish);
+    void addFishes(List<Fish> fish);
 
     List<Fish> sortByPrice(boolean reverse);
 

@@ -8,30 +8,65 @@ import java.util.*;
 
 public class ShopManager implements IShopManager {
 
-    private Map<String, List<Fish>> FishMap = new HashMap<>();
+    private Map<FishCategory, List<Fish>> fishMap = new HashMap<>();
+
 
     @Override
-    public List<Fish> findByCategory(FishCategory category) {
-        return null;
+    public List<Fish> fishInPriceRange(float minPrice, float maxPrice, FishCategory category) {
+        List<Fish> fishInPriceRange = new LinkedList<>();
+        fishMap.get(category).forEach(fish-> {
+            if (fish.priceInHryvnia() >= minPrice && fish.priceInHryvnia() <= maxPrice){
+                fishInPriceRange.add(fish);
+            }
+        });
+        return fishInPriceRange;
     }
 
-    @Override
-    public List<Fish> findByPrice(float price) {
-        return null;
-    }
 
     @Override
-    public void addFish(List<Fish> fish) {
+    public void addFishes(List<Fish> fishes) {
+        fishes.forEach(fish -> {
+            FishCategory category = fish.category();
+            var existingFish = fishMap.get(category);
+
+            if (existingFish == null){
+                existingFish = new LinkedList<Fish>();
+                fishMap.put(category, existingFish);
+            }
+
+            existingFish.add(fish);
+        });
     }
 
     @Override
     public List<Fish> sortByPrice(boolean reverse) {
-        return null;
+        List<Fish> allFishes = new ArrayList<>();
+        fishMap.values().forEach(fishes -> {
+            fishes.forEach(fish -> {
+                allFishes.add(fish);
+            });
+        });
+        Collections.sort(allFishes, Comparator.comparing(Fish::priceInHryvnia));
+        if(reverse){
+            Collections.reverse(allFishes);
+        }
+        return allFishes;
     }
 
     @Override
     public List<Fish> sortByWeight(boolean reverse) {
-        return null;
+        List<Fish> allFishes = new ArrayList<>();
+        fishMap.values().forEach(fishes -> {
+            fishes.forEach(fish -> {
+                allFishes.add(fish);
+            });
+        });
+        Collections.sort(allFishes, Comparator.comparing(Fish::weightInKilo));
+        if(reverse){
+            Collections.reverse(allFishes);
+        }
+        return allFishes;
+
     }
 
 
