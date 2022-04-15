@@ -15,7 +15,7 @@ public class ShopManager implements IShopManager {
     public List<Fish> fishInPriceRange(float minPrice, float maxPrice, FishCategory category) {
         List<Fish> fishInPriceRange = new LinkedList<>();
         fishMap.get(category).forEach(fish-> {
-            if (fish.priceInHryvnia() >= minPrice && fish.priceInHryvnia() <= maxPrice){
+            if (fish.getPriceInHryvnia() >= minPrice && fish.getPriceInHryvnia() <= maxPrice){
                 fishInPriceRange.add(fish);
             }
         });
@@ -26,7 +26,7 @@ public class ShopManager implements IShopManager {
     @Override
     public void addFishes(List<Fish> fishes) {
         fishes.forEach(fish -> {
-            FishCategory category = fish.category();
+            FishCategory category = fish.getCategory();
             var existingFish = fishMap.get(category);
 
             if (existingFish == null){
@@ -46,7 +46,7 @@ public class ShopManager implements IShopManager {
                 allFishes.add(fish);
             });
         });
-        Collections.sort(allFishes, Comparator.comparing(Fish::priceInHryvnia));
+        Collections.sort(allFishes, Comparator.comparing(Fish::getPriceInHryvnia));
         if(reverse){
             Collections.reverse(allFishes);
         }
@@ -61,7 +61,7 @@ public class ShopManager implements IShopManager {
                 allFishes.add(fish);
             });
         });
-        Collections.sort(allFishes, Comparator.comparing(Fish::weightInKilo));
+        Collections.sort(allFishes, Comparator.comparing(Fish::getWeightInKilo));
         if(reverse){
             Collections.reverse(allFishes);
         }

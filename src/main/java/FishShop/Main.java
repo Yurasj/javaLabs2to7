@@ -4,20 +4,19 @@ import FishShop.model.Fish;
 import FishShop.model.FishCategory;
 import FishShop.manager.impl.ShopManager;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+
 
 
 public class Main {
 
     public static void main(String[] args) {
-	    Fish fish1 = new Fish(FishCategory.FROZEN, 150, 1.6);
-        Fish fish2 = new Fish(FishCategory.ALIVE, 165, 2.34);
-        Fish fish3 = new Fish(FishCategory.HERRING, 111, 0.56);
-        Fish fish4 = new Fish(FishCategory.FROZEN, 54, 5.9);
-        Fish fish5 = new Fish(FishCategory.ALIVE, 121, 2.3);
-        Fish fish6 = new Fish(FishCategory.HERRING, 133, 3.1);
+	    Fish fish1 = new Fish(20, 60, FishCategory.FROZEN,  1.6, 150);
+        Fish fish2 = new Fish(30, 50, FishCategory.ALIVE,  2.34, 165);
+        Fish fish3 = new Fish(56, 34, FishCategory.HERRING, 0.56, 111 );
+        Fish fish4 = new Fish(23.5, 54, FishCategory.FROZEN,  5.9, 54);
+        Fish fish5 = new Fish(32, 21, FishCategory.ALIVE,  2.3, 121);
+        Fish fish6 = new Fish(67, 34, FishCategory.HERRING, 3.1, 133);
 
         ShopManager Manager1 = new ShopManager();
 
