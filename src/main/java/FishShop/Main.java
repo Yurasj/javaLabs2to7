@@ -1,12 +1,11 @@
 package FishShop;
 
-import FishShop.model.Fish;
-import FishShop.model.FishCategory;
+import FishShop.model.*;
 import FishShop.manager.impl.ShopManager;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-
-
+import java.util.List;
 
 public class Main {
 
@@ -18,14 +17,44 @@ public class Main {
         Fish fish5 = new Fish(32, 21, FishCategory.ALIVE,  2.3, 121);
         Fish fish6 = new Fish(67, 34, FishCategory.HERRING, 3.1, 133);
 
+        List<Fish> fishes = new ArrayList<>(Arrays.asList(fish1, fish2, fish3, fish4, fish5, fish6));
+        fishes.forEach(fish -> {
+            System.out.println("Length: " + fish.getLengthInCm() + " Width: " + fish.getWidthInCm() + " Category: " + fish.getCategory() +
+                    " Weight:" + fish.getWeightInKilo() + " Price: " + fish.getPriceInHryvnia());
+
+        });
+
+        System.out.println();
+
         ShopManager Manager1 = new ShopManager();
+        Manager1.addFishes(fishes);
 
-        Manager1.addFishes(Arrays.asList(fish1, fish2, fish3, fish4, fish5, fish6 ));
+        var fishesSortedByPrice = Manager1.sortByPrice(true);
+        System.out.println("sortedByPrice:");
+        fishesSortedByPrice.forEach(fish -> {
+            System.out.println("Length: " + fish.getLengthInCm() + " Width: " + fish.getWidthInCm() + " Category: " + fish.getCategory() +
+                    " Weight:" + fish.getWeightInKilo() + " Price: " + fish.getPriceInHryvnia());
 
-        System.out.println("Sorted by price: " + Manager1.sortByPrice(false));
+        });
 
-        System.out.println("Sorted by weight: " + Manager1.sortByWeight(true));
+        System.out.println();
 
-        System.out.println("Frozen fishes in price range of 50 - 125: " + Manager1.fishInPriceRange(50, 125, FishCategory.FROZEN ));
+        var fishesSortedByWeigh = Manager1.sortByWeight(true);
+        System.out.println("sortedByPrice:");
+        fishesSortedByWeigh.forEach(fish -> {
+            System.out.println("Length: " + fish.getLengthInCm() + " Width: " + fish.getWidthInCm() + " Category: " + fish.getCategory() +
+                    " Weight:" + fish.getWeightInKilo() + " Price: " + fish.getPriceInHryvnia());
+
+        });
+
+        System.out.println();
+
+        var fishFoundInPriceRange = Manager1.findFishInPriceRange(50, 125, FishCategory.FROZEN);
+        System.out.println("fishFoundInPriceRange:");
+        fishFoundInPriceRange.forEach(fish -> {
+            System.out.println("Length: " + fish.getLengthInCm() + " Width: " + fish.getWidthInCm() + " Category: " + fish.getCategory() +
+                    " Weight:" + fish.getWeightInKilo() + " Price: " + fish.getPriceInHryvnia());
+
+        });
     }
 }

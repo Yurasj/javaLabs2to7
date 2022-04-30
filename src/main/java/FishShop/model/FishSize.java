@@ -1,5 +1,8 @@
 package FishShop.model;
 
+import lombok.Getter;
+
+@Getter
 public class FishSize {
     protected double lengthInCm;
     protected double widthInCm;
@@ -11,13 +14,6 @@ public class FishSize {
 
     }
 
-    public double getLengthInCm() {
-        return lengthInCm;
-    }
-
-    public double getWidthInCm() {
-        return widthInCm;
-    }
 
 
 
