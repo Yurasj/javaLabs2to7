@@ -5,7 +5,14 @@ import FishShop.model.Fish;
 import FishShop.model.FishCategory;
 import lombok.Getter;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @Getter
 public class ShopManager implements IShopManager {
@@ -58,6 +65,17 @@ public class ShopManager implements IShopManager {
 
     }
 
+    @Override
+    public List<Fish> getFishes() {
+        List<Fish> result = new ArrayList<>();
+        fishMap.values().forEach(result::addAll);
+        return result;
+    }
+
+    @Override
+    public Set<FishCategory> getKeys() {
+        return fishMap.keySet();
+    }
 
 
 }

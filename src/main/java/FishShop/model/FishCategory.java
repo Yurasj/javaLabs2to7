@@ -6,5 +6,6 @@ import lombok.Getter;
 public enum FishCategory {
     FROZEN,
     ALIVE,
+    NULL,
     HERRING;
 }

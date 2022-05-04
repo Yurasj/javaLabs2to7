@@ -18,6 +18,13 @@ public class Fish extends FishSize {
         return (this.lengthInCm == fish.lengthInCm && this.widthInCm == fish.widthInCm &&
                 this.category== fish.category && this.weightInKilo == fish.weightInKilo && this.priceInHryvnia == fish.priceInHryvnia);
     }
+    public String getHeaders() {
+        return "lengthInCm, widthInCm, category, weightInKilo, priceInHryvnia";
+    }
+    public String toCSV(){
+        return lengthInCm + ", " + widthInCm + ", " + category + ", " + weightInKilo + ", " + priceInHryvnia;
+    }
+
 
 }
 

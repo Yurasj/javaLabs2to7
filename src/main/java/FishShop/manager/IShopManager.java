@@ -4,6 +4,7 @@ import FishShop.model.Fish;
 import FishShop.model.FishCategory;
 
 import java.util.List;
+import java.util.Set;
 
 public interface IShopManager {
 
@@ -14,6 +15,10 @@ public interface IShopManager {
     List<Fish> sortByPrice(boolean reverse);
 
     List<Fish> sortByWeight(boolean reverse);
+
+    List<Fish> getFishes();
+
+    Set<FishCategory> getKeys();
 
 }
 

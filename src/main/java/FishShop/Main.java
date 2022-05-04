@@ -2,14 +2,16 @@ package FishShop;
 
 import FishShop.model.*;
 import FishShop.manager.impl.ShopManager;
+import FishShop.manager.FishWriter;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 	    Fish fish1 = new Fish(20, 60, FishCategory.FROZEN,  1.6, 150);
         Fish fish2 = new Fish(30, 50, FishCategory.ALIVE,  2.34, 165);
         Fish fish3 = new Fish(56, 34, FishCategory.HERRING, 0.56, 111 );
@@ -28,6 +30,9 @@ public class Main {
 
         ShopManager Manager1 = new ShopManager();
         Manager1.addFishes(fishes);
+        FishWriter.writeToFile(fishes);
+
+
 
         var fishesSortedByPrice = Manager1.sortByPrice(true);
         System.out.println("sortedByPrice:");
@@ -56,5 +61,6 @@ public class Main {
                     " Weight:" + fish.getWeightInKilo() + " Price: " + fish.getPriceInHryvnia());
 
         });
+
     }
 }
