@@ -1,11 +1,11 @@
-package FishShop.model;
+package fishshop.model;
 
 import lombok.Getter;
 
 @Getter
 public enum FishCategory {
-    FROZEN,
     ALIVE,
-    NULL,
-    HERRING;
+    FROZEN,
+    HERRING,
+    NULL
 }

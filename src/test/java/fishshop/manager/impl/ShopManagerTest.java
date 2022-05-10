@@ -1,6 +1,6 @@
-package FishShop.manager.impl;
+package fishshop.manager.impl;
 
-import FishShop.model.*;
+import fishshop.model.*;
 import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package FishShop.manager;
+package fishshop.manager;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,11 +8,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import fishshop.model.Fish;
+import fishshop.model.FishCategory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import FishShop.model.*;
 
 
 class FishWriterTest {

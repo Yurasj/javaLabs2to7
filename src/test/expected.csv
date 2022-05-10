@@ -1,9 +1,9 @@
 lengthInCm, widthInCm, category, weightInKilo, priceInHryvnia
-20.0, 60.0, FROZEN, 1.6, 200.0
-23.5, 54.0, FROZEN, 5.9, 124.0
-lengthInCm, widthInCm, category, weightInKilo, priceInHryvnia
 30.0, 50.0, ALIVE, 2.34, 175.0
 32.0, 21.0, ALIVE, 2.3, 121.0
+lengthInCm, widthInCm, category, weightInKilo, priceInHryvnia
+20.0, 60.0, FROZEN, 1.6, 200.0
+23.5, 54.0, FROZEN, 5.9, 124.0
 lengthInCm, widthInCm, category, weightInKilo, priceInHryvnia
 56.0, 34.0, HERRING, 0.56, 151.0
 67.0, 34.0, HERRING, 3.1, 103.0
